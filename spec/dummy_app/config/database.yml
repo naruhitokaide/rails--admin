@@ -1,0 +1,32 @@
+sqlite: &sqlite
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+postgresql:
+  adapter: postgresql
+  database: rails_admin
+  username: postgres
+  password:
+  host: localhost
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+mysql:
+  adapter: mysql2
+  database: rails_admin
+  username: root
+  password:
+  host: localhost
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *sqlite
+  database: db/development.sqlite3
+
+test:
+  <<: *sqlite
+  database: db/test.sqlite3
